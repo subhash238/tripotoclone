@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            width: 100%;
+            height: 55vh;
+            background-image: url('https://cdn1.tripoto.com/assets/2.9/img/home_banner.jpg');
+            background-size: cover;
+        }
+        #nav{
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        #nav>div:nth-child(1){
+            width: 13%;
+            height: 10vh;
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+        #nav>div:nth-child(2){
+            width: 35%;
+            height: 10vh;
+            margin-right: 30px;
+        }
+        #link{
+            display: flex;
+            justify-content: space-between;
+        }
+        a{
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bolder;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            margin-top: 55px;
+            font-weight: bolder;
+        }
+        #search{
+            width: 48%;
+            height: 5vh;
+            margin: auto;
+            border-radius: 10px;
+            background-color: white;
+            padding: 10px;
+        }
+        input{
+            line-height: 5vh;
+            border: none;
+            outline: none;
+            width: 95%;
+        }
+        .fa-search{
+            color: black;
+        }
+        #parent{
+            width: 80%;
+            height: 30vh;
+            margin: auto;
+            margin-top: 50px;
+          
+        }
+        #slider{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transition: 0.9s;
+        }
+        #prev{
+            position: absolute;
+            top: 73%;
+            left: 8%;
+            transform: (-40% );
+            padding: 1% 1.5%;
+            border-radius: 30px;
+            color: red;
+            border: none;
+        }
+        #next{
+            position: absolute;
+            top: 73%;
+            right: 8%;
+            transform: (40% );
+            padding: 1% 1.5%;
+            border-radius: 30px;
+            color: red;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <nav id="nav">
+            <div>
+                <img src="logo.PNG">
+            </div>
+            <div id="link">
+                <a href="#">Inspirations▼</a>
+                <a href="#">Forum</a>
+                <a href="#">Holidays</a>
+                <a href="#">Publish Trip▼</a>
+                <a href="#" onclick="login()">Sign in</a>
+            </div>
+        </nav>
+        <h1>The Global Community of Travellers</h1>
+        <div id="search">
+            <input type="text" placeholder="Search for itineraise, destination, hotels or activities">
+            <a href="#">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+    <div id="parent">
+        <button onclick="prev()" id="prev">❮</button>
+        <button onclick="next()" id="next">❯</button>
+        <div id="slider"></div>
+    </div>
+    <h1 id="demo">myna</h1>
+    <h1 id="demo">myna</h1>
+    <h1 id="demo">myna</h1>
+</body>
+</html>
+<script>
+        var tripoto=[
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149511_untitled_design_8.jpg",
+               
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149521_untitled_design_7.jpg",
+               
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1612769543_language.jpg",
+              
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/1745358/Image/1613030058_1_8.jpg",
+               
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149564_untitled_design_1.jpg",
+               
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149576_untitled_design.jpg",
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149588_untitled_design_2.jpg",
+            },
+            {
+                img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149597_untitled_design_3.jpg",
+               
+            }
+
+        ]
+        localStorage.setItem('tripoto',JSON.stringify(tripoto))
+        var data=JSON.parse(localStorage.getItem('tripoto'))
+        var parent=document.getElementById('parent')
+        var child=document.getElementById('slider')
+        document.getElementById('prev').style.display="none"
+        function prev(){
+            document.getElementById('prev').style.display="none"
+            document.getElementById('next').style.display="block"
+            child.innerHTML=""
+        for(var i=0;i<4;i++){
+        if(i<4){
+             var div=document.createElement('div')
+             div.style.cursor="pointer"
+             var img=document.createElement('img')
+             img.src=data[i].img
+             img.setAttribute('width','250px')
+             img.setAttribute('height','200px')
+             div.append(img)
+             child.append(div)
+             parent.append(child)
+        }
+    }
+}
+ prev()
+    function next(){
+        var child=document.getElementById('slider')
+        child.innerHTML=""
+        document.getElementById('next').style.display="none"
+        document.getElementById('prev').style.display="block"
+        for(var i=4;i<data.length;i++){
+            if(i>=4){
+             var div=document.createElement('div')
+             div.style.cursor="pointer"
+             var img=document.createElement('img')
+             img.src=data[i].img
+             img.setAttribute('width','250px')
+             img.setAttribute('height','200px')
+             div.append(img)
+             child.append(div)
+             parent.append(child)
+            }
+        }
+    }
+    function login(){
+        alert("you are able to login")
+    }
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("nav").style.backgroundColor = "blue";
+  } else {
+    document.getElementById("nav").style.backgroundColor = "";
+  }
+}
+</script>
