@@ -22,6 +22,8 @@
             height: 10vh;
             display: flex;
             justify-content: space-between;
+            top: 0;
+            left: 0;
             
         }
         #nav>div:nth-child(1){
@@ -30,7 +32,7 @@
             margin-left: 30px;
             margin-top: 5px;
         }
-        #nav>div:nth-child(2){
+        #nav>div:nth-child(3){
             width: 35%;
             height: 10vh;
             margin-right: 30px;
@@ -60,11 +62,26 @@
             background-color: white;
             padding: 10px;
         }
-        input{
+        #navsearch{
+            width: 30%;
+            height: 2vw;
+            border-radius: 5px;
+            background-color: white;
+            padding: 7px;
+            margin-top: 12px;
+        }
+        #newinput{
+            line-height: 1vh;
+            border: none;
+            outline: none;
+            width: 90%;
+        }
+        #input{
             line-height: 5vh;
             border: none;
             outline: none;
             width: 95%;
+            
         }
         .fa-search{
             color: black;
@@ -102,25 +119,245 @@
             color: red;
             border: none;
         }
+        #login{
+            width: 25%;
+            height: 60vh;
+            background-color: wheat;
+            top: 35px;
+            left: 500px;
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+            position: fixed;
+        }
+        #facebook{
+            width: 90%;
+            height: 5vh;
+            margin: auto;
+            margin-top: 30px;
+            background-color: rgb(31, 31, 95);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #google{
+            width: 90%;
+            height: 5vh;
+            margin: auto;
+            margin-top: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #email{
+            width: 90%;
+            height: 5vh;
+            outline: none;
+            margin-left: 18px;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+        }
+        #email1{
+            width: 90%;
+            height: 5vh;
+            outline: none;
+            margin-left: 18px;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        #options{
+            width: 92%;
+            height: 5vh;
+            outline: none;
+            margin-left: 18px;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        #robot{
+            width: 92%;
+            height: 8vh;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #checkbox{
+            width: 7%;
+            height: 4vh;
+            border: 1px solid red;
+            margin-top: 13px;
+            margin-left: 20px;
+            float: left;
+        }
+        #captcha{
+            width: 20%;
+            height: 6vh;
+            margin-top: 5px;
+            margin-right: 5px;
+            float: right;
+        }
+        #name{
+            width: 90%;
+            height: 5vh;
+            outline: none;
+            margin-left: 18px;
+            border: 1px solid blueviolet;
+            border-radius: 5px;
+        }
+        #password{
+            width: 90%;
+            height: 5vh;
+            outline: none;
+            margin-left: 18px;
+            border: 1px solid blueviolet;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        #password1{
+            width: 90%;
+            height: 5vh;
+            outline: none;
+            margin-left: 18px;
+            border: 1px solid blueviolet;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        #remember{
+            width: 90%;
+            height: 5vh;
+            margin: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #button{
+            width: 90%;
+            height: 5vh;
+            margin-left: 18px;
+            margin-top: 10px;
+            background-color: rgb(250, 8, 8);
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        #button1{
+            width: 90%;
+            height: 5vh;
+            margin-left: 18px;
+            margin-top: 10px;
+            background-color: rgb(250, 8, 8);
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        #termcondition{
+            width: 90%;
+            height: 6vh;
+        }
+        #signup{
+            width: 90%;
+            height: 5vh;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #fbimage{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            margin-left: 80px;
+            float: left;
+            margin-top: 7px;
+        }
+        #text{
+            width: 50%;
+            height: 3vh;
+            float: left;
+            margin-top: 7px;
+            margin-left: 10px;
+        }
+        #fbimage>img{
+            width: 100%;
+            height: 100%;
+        }
+        #close{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            float: right;
+            margin-right: 5px;
+        }
+        #close>img{
+            width: 100%;
+            height: 100%;
+        }
+        #signin{
+            width: 25%;
+            height: 85vh;
+            background-color: wheat;
+            top: 35px;
+            left: 500px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            position: absolute;
+            position: fixed;
+        }
     </style>
 </head>
 <body>
     <div id="header">
         <nav id="nav">
-            <div>
-                <img src="logo.PNG">
+            <div >
+                <img id="img" src="logo.PNG">
+            </div>
+            <div id="navsearch" style="display: none;color: ;">
+                <input id="newinput"  type="text" placeholder="Search for itineraise, destination, hotels or activities">
+                <a href="#">
+                    <i class="fas fa-search"></i>
+                </a>
             </div>
             <div id="link">
                 <a href="#">Inspirations▼</a>
                 <a href="#">Forum</a>
                 <a href="#">Holidays</a>
                 <a href="#">Publish Trip▼</a>
-                <a href="#" onclick="login()">Sign in</a>
+                <a href="#" onclick="login()" id="remove">Sign in</a>
             </div>
         </nav>
-        <h1>The Global Community of Travellers</h1>
+        <div id="login">
+            <div id="close" onclick="closelogin()">
+                <img src="https://logodix.com/logo/1077363.png">
+            </div>
+            <div id="facebook">
+                <div id="fbimage">
+                    <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png">
+                </div>
+                <div id="text">Log in with Facebook</div>
+            </div>
+            <div id="google">
+                <div id="fbimage">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/google-152-189813.png">
+                </div>
+                <div id="text">Log in with Google</div>
+            </div>
+            <p style="text-align: center;">OR</p>
+            <input type="text" id="email" placeholder="EMAIL">
+            <input type="password" id="password" placeholder="PASSWORD">
+            <div id="remember">
+                <input style="margin-top: 5px;" type="checkbox">
+                <label>Remember me</label>
+                <a href="#" style="color: blue; float: right;margin-top: 5px;">Forgot Password</a>
+            </div>
+            <input style="color: white; font-weight: bolder;" type="button" value="LOG IN" id="button">
+           <div id="signup">
+               <p style="text-align: center;">Don't have an account? 
+                <a href="#" style="color: blue;" onclick="signup()">Sign Up</a>
+            </p>
+            </div>
+        </div>
+        <h1 >The Global Community of Travellers</h1>
         <div id="search">
-            <input type="text" placeholder="Search for itineraise, destination, hotels or activities">
+            <input id="input" type="text" placeholder="Search for itineraise, destination, hotels or activities">
             <a href="#">
                 <i class="fas fa-search"></i>
             </a>
@@ -131,9 +368,51 @@
         <button onclick="next()" id="next">❯</button>
         <div id="slider"></div>
     </div>
-    <h1 id="demo">myna</h1>
-    <h1 id="demo">myna</h1>
-    <h1 id="demo">myna</h1>
+    <div id="signin">
+        <div id="close" onclick="closesignup()">
+            <img src="https://logodix.com/logo/1077363.png">
+        </div>
+        <div id="facebook">
+            <div id="fbimage">
+                <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-128.png">
+            </div>
+            <div id="text">Log in with Facebook</div>
+        </div>
+        <div id="google">
+            <div id="fbimage">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/google-152-189813.png">
+            </div>
+            <div id="text">Log in with Google</div>
+        </div>
+        <p style="text-align: center;">OR</p>
+        <input type="text" id="name" placeholder="NAME">
+        <input type="text" id="email1" placeholder="EMAIL">
+        <input type="password" id="password1" placeholder="PASSWORD">
+        <select id="options">
+            <option value="">Account Type</option>
+            <option value="Personal">Personal</option>
+            <option value="Business">Business</option>
+            <option value="Blogger">Blogger</option>
+            <option value="Indipent Guide">Indipent Guide</option>
+        </select>
+        <input style="margin-top: 10px; margin-left: 20px;" type="checkbox">
+        <label>Subscribe to the newsletter</label>
+        <div id="robot">
+            <div id="checkbox" onclick="checkbox()"></div>
+            <label style="margin-left: 10px; line-height: 50px;">I'm not a robot</label>
+            <div id="captcha">
+                <img style="width: 100%; height: 100%;" src="captcha.PNG">
+            </div>
+        </div>
+        <input style="color: white; font-weight: bolder;" type="button" value="SIGN UP" id="button1">
+        <p style="text-align: center;"><span style="color: blue; cursor: pointer;">By signing up, you agree to Tripoto's</span>terms and conditions and privacy policy.</p>
+        <p style="text-align: center;">Already registered? <span>
+        <a style="color: blue;" href="#" onclick="loginAgain()">Log in</a>
+        </span></p>
+    </div>
+    <h1>sdfdvdsvs</h1>
+    <h1>sdfdvdsvs</h1>
+    <h1>sdfdvdsvs</h1>
 </body>
 </html>
 <script>
@@ -214,14 +493,102 @@
         }
     }
     function login(){
-        alert("you are able to login")
+        document.getElementById('login').style.display='block'
+        
     }
     window.onscroll = function() {myFunction()};
     function myFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("nav").style.backgroundColor = "blue";
-  } else {
+    var navigation=document.getElementById('nav')
+    navigation.style.backgroundColor="cornflowerblue"
+    navigation.style.position='relative'
+    navigation.style.position='fixed'
+    var next=document.getElementById('next')
+    next.style.top='80%'
+    var prev=document.getElementById('prev')
+    prev.style.top='80%'
+    document.getElementById('navsearch').style.display='block'
+    document.getElementById('img').setAttribute('src','new.PNG')
+    document.getElementById('img').setAttribute('width','100%')
+    document.getElementById('img').setAttribute('height','70%')
+
+  } 
+  else {
     document.getElementById("nav").style.backgroundColor = "";
+    var navigation=document.getElementById('nav')
+    navigation.style.position='relative'
+    var next=document.getElementById('next')
+    next.style.top='73%'
+    var prev=document.getElementById('prev')
+    prev.style.top='73%'
+    document.getElementById('navsearch').style.display='none'
+    document.getElementById('img').setAttribute('src','logo.PNG')
   }
+}
+function closelogin(){
+    document.getElementById('login').style.display='none'
+}
+function checkbox(){
+    var check=document.getElementById('checkbox')
+    check.innerHTML=""
+    check.style.border="none"
+    var img=document.createElement('img')
+    img.setAttribute('src','https://seeklogo.com/images/G/google-material-design-check-logo-B26F6F7B81-seeklogo.com.png')
+    img.setAttribute('width','100%')
+    img.setAttribute('height','100%')
+    check.append(img)
+}
+function signup(){
+    document.getElementById('login').style.display='none'
+    document.getElementById('signin').style.display='block'
+}
+function loginAgain(){
+    document.getElementById('login').style.display='block'
+    document.getElementById('signin').style.display='none'
+}
+function closesignup(){
+    document.getElementById('signin').style.display='none'
+}
+document.getElementById('button1').addEventListener('click',validate)
+var arr1=JSON.parse(localStorage.getItem('detail'))||[]
+function validate(){
+      var name=document.getElementById('name').value
+      var email=document.getElementById('email1').value
+      var password=document.getElementById('password1').value
+      if(name==''||email==''||password==''){
+                alert("please fill all the fields")
+    }else{
+      var obj={
+          name:name,
+          email:email,
+          password:password
+      }
+      arr1.push(obj)
+      localStorage.setItem('detail',JSON.stringify(arr1))
+    }
+}
+document.getElementById('button').addEventListener('click',validatleogin)
+function validatleogin(){
+    var email=document.getElementById('email').value
+    var password=document.getElementById('password').value
+    var data=JSON.parse(localStorage.getItem('detail'))
+    data.forEach(Element=>{
+        if(Element.email==email&&Element.password==password){
+           document.getElementById('remove').style.display="none"
+           var link=document.getElementById('link') 
+           document.getElementById('login').style.display="none"
+            var div=document.createElement('div')
+            div.style.width='35px'
+            div.style.height='35px'
+            div.style.marginTop='10px'
+            div.style.borderRadius='17.5px'
+            var img=document.createElement('img')
+            img.src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ei-user.svg/1200px-Ei-user.svg.png"
+            img.style.width="100%"
+            img.style.height="100%"
+            div.append(img)
+            link.append(div)
+        }
+    })
 }
 </script>
