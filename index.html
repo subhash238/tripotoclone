@@ -311,7 +311,7 @@
                 <img id="img" src="logo.PNG">
             </div>
             <div id="navsearch" style="display: none;color: ;">
-                <input id="newinput"  type="text" placeholder="Search for itineraise, destination, hotels or activities">
+                <input id="newinput" type="text" value="" placeholder="Search for itineraise, destination, hotels or activities" value="hii">
                 <a href="#">
                     <i class="fas fa-search"></i>
                 </a>
@@ -356,11 +356,14 @@
             </div>
         </div>
         <h1 >The Global Community of Travellers</h1>
-        <div id="search">
+        <div id="search" >
             <input id="input" type="text" placeholder="Search for itineraise, destination, hotels or activities">
             <a href="#">
                 <i class="fas fa-search"></i>
             </a>
+        </div>
+        <div id="parents" style="margin-top: 5px; position: absolute; top: 250px; left: 340px;">
+
         </div>
     </div>
     <div id="parent">
@@ -416,6 +419,48 @@
 </body>
 </html>
 <script>
+        var places=[
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Goa",
+        status:"Trending now",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Uttrakhand",
+        status:"Trending now",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Jaipur",
+        status:"Ready to book staycations available",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Patna India",
+        status:"Travel guide",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Patiala",
+        status:"Trending now",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Patong Thailand",
+        status:"Trending now",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Pune india",
+        status:"Travel Guide",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"Puri India",
+        status:"Travel Guide",
+    }
+]
         var tripoto=[
             {
                 img:"https://cdn1.tripoto.com/media/filter/tst/img/311219/Image/1611149511_untitled_design_8.jpg",
@@ -569,6 +614,7 @@ function validate(){
 }
 document.getElementById('button').addEventListener('click',validatleogin)
 function validatleogin(){
+    var flag=true
     var email=document.getElementById('email').value
     var password=document.getElementById('password').value
     var data=JSON.parse(localStorage.getItem('detail'))
@@ -578,17 +624,73 @@ function validatleogin(){
            var link=document.getElementById('link') 
            document.getElementById('login').style.display="none"
             var div=document.createElement('div')
-            div.style.width='35px'
-            div.style.height='35px'
+            div.style.width='40px'
+            div.style.height='40px'
             div.style.marginTop='10px'
-            div.style.borderRadius='17.5px'
+            div.style.borderRadius='20px'
             var img=document.createElement('img')
             img.src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ei-user.svg/1200px-Ei-user.svg.png"
             img.style.width="100%"
             img.style.height="100%"
             div.append(img)
             link.append(div)
+            var h5=document.createElement('h4')
+            h5.addEventListener('click',load)
+            h5.innerText="Log Out"
+            h5.style.color="white"
+            h5.style.cursor="pointer"
+            link.append(h5)
+            flag=false
         }
     })
+    if(flag){
+        alert("Invald Username or Password")
+    }
 }
+function load(){
+    window.location.href='index.html'
+}
+document.getElementById("input").addEventListener("click", mycity);
+function mycity() {
+    var parents=document.getElementById("parents")
+    parents.innerHTML=""
+ places.forEach(Element=>{
+     if(Element.name.includes(this.value)){
+         var div=document.createElement('div')
+         div.style.borderRadius="5px"
+         div.style.width="250%"
+         div.style.cursor='pointer'
+         div.style.height="10vh"
+         div.style.backgroundColor="white"
+         div.style.margin="auto"
+         var div2=document.createElement('div')
+         div2.style.width="30px"
+         div2.style.height="30px"
+         div2.style.borderRadius="15px"
+         div2.style.float="left"
+         div2.style.marginTop="5px"
+         var img=document.createElement('img')
+         img.style.width="100%"
+         img.style.height="100%"
+         img.src=`${Element.imag}`
+         div2.append(img)
+         var div3=document.createElement('div')
+         div3.style.width="70%"
+         div3.style.height="3vh"
+         div3.style.float="left"
+         div3.style.marginLeft="20px"
+         var p_name=document.createElement('p')
+         p_name.style.lineHeight="1px"
+         p_name.innerHTML=`${Element.name}`
+         var p_status=document.createElement('p')
+         p_status.style.lineHeight="1px"
+         p_status.style.color="green"
+         p_status.innerHTML=`${Element.status}`
+         div3.append(p_name,p_status)
+         div.append(div2,div3)
+         parents.append(div)
+     }
+ })
+}
+
 </script>
