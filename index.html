@@ -459,6 +459,11 @@
         imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
         name:"Puri India",
         status:"Travel Guide",
+    },
+    {
+        imag:"https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_location_on_48px-512.png",
+        name:"rajsthan",
+        status:"Travel Guide",
     }
 ]
         var tripoto=[
@@ -650,7 +655,7 @@ function validatleogin(){
 function load(){
     window.location.href='index.html'
 }
-document.getElementById("input").addEventListener("click", mycity);
+document.getElementById("input").addEventListener("input", mycity);
 function mycity() {
     var parents=document.getElementById("parents")
     parents.innerHTML=""
@@ -658,7 +663,7 @@ function mycity() {
      if(Element.name.includes(this.value)){
          var div=document.createElement('div')
          div.style.borderRadius="5px"
-         div.style.width="250%"
+         div.style.width="450%"
          div.style.cursor='pointer'
          div.style.height="10vh"
          div.style.backgroundColor="white"
@@ -687,10 +692,33 @@ function mycity() {
          p_status.style.color="green"
          p_status.innerHTML=`${Element.status}`
          div3.append(p_name,p_status)
+        //  var btn=document.createElement("button")
+        //  btn.style.float='left'
+        //  btn.innerText="go to Goa"
+        //  btn.style.border="none"
+        //  btn.style.backgroundColor="white"
+        //  btn.style.width="100%"
+        //  btn.style.height="10%"
+        //  btn.style.marginTop="10px"
+        //  btn.onclick=function(){
+        //      myfunction(Element.name)
+        //  }
          div.append(div2,div3)
          parents.append(div)
+         div.onclick=function(){
+             myfunction(Element.name)
+         }
      }
  })
 }
-
+window.ondblclick=function(){myFunction_1()}
+function myFunction_1(){
+    document.getElementById("login").style.display="none"
+    document.getElementById("signin").style.display="none"
+    document.getElementById("parents").style.display="none"
+}
+function myfunction(name){
+    localStorage.setItem('cityName',JSON.stringify(name))
+    window.location.href="city.html"
+}
 </script>
