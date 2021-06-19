@@ -1,6 +1,9 @@
-# tripotoclone
-Tripoto is a travel community and travel search engine portal based on user-generated content . The platform was launched on October 2013 by founders Anirudh Gupta and Michael Pargal Lyngdoh
-In this project we have tried our best to make the exact replica of Tripoto. With the technology stack that we have learnt in masai school we were able to build the front-end of the Tripoto Website.
+ Clone-tripoto
+
+Tripoto is a travel community and travel search engine portal based on user-generated content .
+The platform was launched on October 2013 by founders Anirudh Gupta and Michael Pargal Lyngdoh
+In this project we have tried our best to make the exact replica of Tripoto. With the technology 
+stack that we have learnt in masai school we were able to build the front-end and back-end of the Tripoto Website.
 
 Technology Stack we used in building this Project :
 
@@ -9,15 +12,16 @@ CSS
 JavaScript
 
 We have focused mainly on:
-Landing Page.
-login Signup Page.
-From Our Partners Page.
-Travel News Page.
-Explore Tripoto In Your Own Language Page.
-Editor's Picks For The Week Page
-Trending Trips Page
-Discover Now Explore Page
-Explore Travel Guides Page
+1.Landing Page.
+2.login Signup Page.
+3.From Our Partners Page.
+4.Travel News Page.
+5.Explore Tripoto In Your Own Language Page.
+6.Editor's Picks For The Week Page
+7.Trending Trips Page
+8.Discover Now Explore Page
+9.Explore Travel Guides Page
+10.Search page
 
 Team members:
 
